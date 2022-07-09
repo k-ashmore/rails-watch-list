@@ -1,0 +1,12 @@
+<h1>show</h1>
+<div class="product">
+<% @bookmarks.each do |bookmark| %>
+  <div class="product-name">
+    <h2><%= bookmark.movie.title %></h2>
+    <h2><%= bookmark.comment %></h2>
+  </div>
+
+  <% end %>
+  <div>
+    <%= link_to "new", new_list_bookmark_path(@list), class: 'btn btn-success' %>
+  </div>

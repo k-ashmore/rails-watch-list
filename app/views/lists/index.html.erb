@@ -1,0 +1,14 @@
+<h1>Index</h1>
+<div class="product">
+<% @lists.each do |list| %>
+  <div class="product-name">
+    <h2><%= link_to list.name, list_path(list) %></h2>
+  </div>
+  <div class="product-info">
+    <p><%= list.name %></p>
+  </div>
+  <% end %>
+  </div>
+  <div>
+    <%= link_to "new", new_list_path, class: 'btn btn-primary' %>
+  </div>
