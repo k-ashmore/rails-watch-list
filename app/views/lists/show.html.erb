@@ -5,6 +5,7 @@
     <h2><%= bookmark.movie.title %></h2>
     <h2><%= bookmark.comment %></h2>
   </div>
+    <%= link_to "destroy", bookmark_path(bookmark), :method => :delete, class: 'btn btn-danger' %>
 
   <% end %>
   <div>

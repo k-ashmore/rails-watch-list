@@ -17,12 +17,10 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    puts "i am here and it is cool /n/n/n/n/n/nn/n/n/n/"
-    puts params
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
 
-    redirect_to bookmarks_path
+    redirect_to list_path(@bookmark.list)
   end
 
   private
