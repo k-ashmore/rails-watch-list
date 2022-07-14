@@ -1,14 +1,27 @@
 <h1>Index</h1>
 <div class="product">
+<div class="image">
+  <%= cl_image_tag("cld-sample-5",
+    width: 400, height: 300, crop: :fill) %>
+  <%= cl_image_tag("cld-sample",
+    width: 150, height: 150, crop: :thumb, gravity: :face) %>
+</div>
 <% @lists.each do |list| %>
-  <div class="product-name">
-    <h2><%= link_to list.name, list_path(list) %></h2>
-  </div>
-  <div class="product-info">
-    <p><%= list.name %></p>
-  </div>
-  <% end %>
-  </div>
+  <div class="product-image">
+      <%= cl_image_tag(list.photo.key,
+      width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="product-name">
+      <h2><%= link_to list.name, list_path(list) %></h2>
+    </div>
+    <div class="product-info">
+      <p><%= list.name %></p>
+    </div>
+    <div>
+    <%= link_to "destroy", list_path(list), :method => :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+    </div>
+    <% end %>
+</div>
   <div>
     <%= link_to "new", new_list_path, class: 'btn btn-primary' %>
   </div>
