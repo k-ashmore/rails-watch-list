@@ -3,10 +3,12 @@
 <div class="image">
 </div>
 <% @lists.each do |list| %>
+<% if list.photo.attached? %>
   <div class="product-image">
       <%= cl_image_tag(list.photo.key,
       width: 400, height: 300, crop: :fill) %>
-    </div>
+  </div>
+    <% end %>
     <div class="product-name">
       <h2><%= link_to list.name, list_path(list) %></h2>
     </div>
