@@ -7,7 +7,7 @@
 <% @bookmarks.each do |bookmark| %>
   <div class="product-name">
     <h2><%= bookmark.movie.title %></h2>
-    <h2><%= bookmark.comment %></h2>
+    <p><%= "#{bookmark.comment}" %></p>
   </div>
     <%= link_to "destroy", bookmark_path(bookmark), :method => :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
 
