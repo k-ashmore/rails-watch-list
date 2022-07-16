@@ -1,7 +1,7 @@
 <h1>Index</h1>
 <div class="product">
-<div class="image">
-</div>
+  <div class="image">
+  </div>
 <% @lists.each do |list| %>
 <% if list.photo.attached? %>
   <div class="product-image">
@@ -16,10 +16,10 @@
       <p><%= list.name %></p>
     </div>
     <div>
-    <%= link_to "destroy", list_path(list), :method => :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+    <%= link_to "Delete", list_path(list), :method => :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
     </div>
     <% end %>
 </div>
   <div>
-    <%= link_to "new", new_list_path, class: 'btn btn-primary' %>
+    <%= link_to "New", new_list_path, class: 'btn btn-primary' %>
   </div>
